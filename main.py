@@ -10,7 +10,10 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     # Game loop, drawing game onto the screen
     while True:
-        pygame.fill()
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return
+        pygame.Surface.fill(screen, color="black")
         pygame.display.flip()
 
     
