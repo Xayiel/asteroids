@@ -11,7 +11,7 @@ def main():
     clock = pygame.time.Clock()
     dt = 0 
 
-    # Game loop, drawing game onto the screen
+    # Game loop, drawing game onto the screen and capping at 60fps.
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
