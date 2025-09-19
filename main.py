@@ -17,6 +17,7 @@ def main():
     dt = 0 
     x = SCREEN_WIDTH / 2
     y = SCREEN_HEIGHT / 2
+    points = 0
     
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
@@ -42,9 +43,11 @@ def main():
         for asteroid in asteroids:
             if player.check_collision(asteroid) == True:
                 print("Game over!")
+                print(f"You've earned {points} points!")
                 sys.exit()
             for shot in shots:
                 if asteroid.check_collision(shot) == True:
+                    points += 10
                     asteroid.split()
                     shot.kill()
                     
